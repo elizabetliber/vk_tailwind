@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=970px, initial-scale=1.0">
+
+    <title>Вконтакте</title>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontSize: {
+                        lg: '0.9rem',
+                        base: '0.8rem',
+                        sm: '0.7rem',
+                    },
+                    lineHeight: {
+                        base: '1.4rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .container {
+            max-width: 970px;
+        }
+
+    </style>
+
+</head>
+<body class="min-h-screen bg-gray-100 text-base">
+<header class="sticky top-0 bg-white border-b z-10">
+    <div class="container mx-auto">
+        <div class="flex justify-between items-center h-12">
+
+            <!--Logo-->
+
+            <div class="flex items-center h-full">
+                <a href="" class="block w-40 mr-2 flex-shrink-0">
+                    <svg fill="none" class="h-6" viewBox="0 0 276 48" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#000000">
+                            <path d="M83.435 29.78c0 3.644-3.393 6.283-8.168 6.283H64.084V13.445H74.89c4.65 0 7.917 2.513 7.917 6.031 0 2.388-1.257 3.896-3.142 4.775a5.851 5.851 0 0 1 3.77 5.53zm-14.45-12.188v4.9h5.78c1.759 0 2.89-1.005 2.89-2.387s-1.257-2.513-2.89-2.513zm6.282 14.324c1.885 0 3.267-1.13 3.267-2.764s-1.256-2.764-3.267-2.764h-6.282v5.528zm26.639 4.021l-7.79-8.921h-1.257v8.921h-5.026V13.445h5.026v8.67h1.256l7.54-8.67h5.905l-9.424 10.806 10.304 11.686zm6.534-11.183c0-6.785 5.026-11.686 12.063-11.686s12.063 4.9 12.063 11.686c0 6.785-5.026 11.686-12.063 11.686s-12.063-4.9-12.063-11.686zm18.848 0c0-4.272-2.764-7.162-6.785-7.162s-6.785 2.89-6.785 7.162 2.764 7.162 6.785 7.162 6.785-2.89 6.785-7.162zm24.503-11.309h5.026v22.492h-5.026V26.89h-10.053v9.047h-5.026V13.445h5.026v8.922h10.053zm15.832 22.492V17.97h-7.79v-4.524h20.481v4.524h-7.79v17.968zm34.304-12.565v12.565h-3.644l-1.005-3.518c-1.131 1.885-3.519 4.02-7.163 4.02-4.523 0-7.79-3.015-7.79-7.161s3.267-7.037 9.927-7.037h4.9c-.251-2.89-1.759-4.9-4.524-4.9-2.261 0-3.769 1.256-4.523 2.638l-4.524-.754c1.131-3.895 5.027-6.157 9.299-6.157 5.529 0 9.047 3.77 9.047 10.304zm-4.901 2.764h-4.649c-3.769 0-5.026 1.257-5.026 2.89 0 1.885 1.508 3.142 4.021 3.142 3.267 0 5.654-2.388 5.654-6.032zm24.252 9.801l-7.791-8.921h-1.256v8.921h-5.027V13.445h5.027v8.67h1.256l7.539-8.67h5.906l-9.424 10.806 10.304 11.686zm15.581 0V17.97h-7.791v-4.524h20.482v4.524h-7.791v17.968zm37.822-9.8h-18.094c.502 3.517 3.015 5.78 6.785 5.78 2.639 0 4.649-1.132 5.78-2.765l4.649.754c-1.633 4.272-6.031 6.534-10.806 6.534-6.785 0-11.686-4.9-11.686-11.686 0-6.785 4.901-11.686 11.686-11.686s11.686 4.9 11.686 11.435c.125.628 0 1.13 0 1.633zm-17.717-3.896h12.439c-.879-2.764-3.141-4.775-6.282-4.775-3.016-.126-5.404 1.885-6.157 4.775z"></path>
+                        </g>
+                        <path d="M0 23.04C0 12.179 0 6.748 3.374 3.374S12.18 0 23.04 0h1.92c10.861 0 16.292 0 19.666 3.374C48 6.748 48 12.18 48 23.04v1.92c0 10.861 0 16.292-3.374 19.666C41.252 48 35.82 48 24.96 48h-1.92c-10.861 0-16.292 0-19.666-3.374C0 41.252 0 35.82 0 24.96z"
+                              fill="#0077FF"></path>
+                        <path d="M25.54 34.58c-10.94 0-17.18-7.5-17.44-19.98h5.48c.18 9.16 4.22 13.04 7.42 13.84V14.6h5.16v7.9c3.16-.34 6.48-3.94 7.6-7.9h5.16c-.86 4.88-4.46 8.48-7.02 9.96 2.56 1.2 6.66 4.34 8.22 10.02h-5.68c-1.22-3.8-4.26-6.74-8.28-7.14v7.14z"
+                              fill="#FFFFFF"></path>
+                    </svg>
+                </a>
+
+                <!--Search-->
+
+                <div class="w-56 mr-4 flex-shrink-0">
+                    <div class="relative">
+                        <label>
+                            <input type="text" placeholder="Поиск"
+                                   class="w-full text-lg px-4 h-8 pl-8 rounded-lg bg-gray-100 focus:outline-none"/>
+                        </label>
+                        <div class="absolute top-0 left-0 h-full w-8 flex justify-center items-center">
+                            <svg class="text-gray-400 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                 fill="currentColor">
+                                <path fill-rule="evenodd"
+                                      d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                      clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Notifications-->
+
+                <div class="relative h-full flex items-center justify-center hover:bg-gray-100 px-3 cursor-pointer group">
+                    <svg class="w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                         fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/>
+                    </svg>
+                    <div class="bg-red-500 w-3.5 h-3.5 top-2.5 right-2.5 rounded-full absolute text-xs flex items-center justify-center text-white">
+                        1
+                    </div>
+                </div>
+
+                <!--Player-->
+
+                <div class="h-full flex items-center justify-center hover:bg-gray-100 px-3 cursor-pointer">
+                    <div class="flex items-center mr-4">
+                        <div class="rotate-[180deg] group">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-gray-500"
+                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 010 1.954l-7.108 4.061A1.125 1.125 0 013 16.811z"/>
+                            </svg>
+                        </div>
+                        <div class="mx-2 group">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-gray-500"
+                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"/>
+                            </svg>
+                        </div>
+                        <div class="group">
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-gray-500"
+                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 010 1.954l-7.108 4.061A1.125 1.125 0 013 16.811z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="text-gray-500 truncate text-lg" style="max-width: 12rem;">
+                        Shawn Mendes — Treat You Better
+                    </div>
+                </div>
+            </div>
+
+            <!-- User-->
+            <div class="h-full">
+                <div x-data="{open: false}" class="relative h-full">
+                    <div x-on:click="open = true"
+                         class="h-full flex items-center justify-center hover:bg-gray-100 px-3 cursor-pointer">
+                        <div class="font-medium truncate select-none text-lg" style="max-width: 7rem">Елиза</div>
+                        <div class="mx-2 flex-shrink-0">
+                            <img src="https://vk.com/images/camera_50.png" alt="photo"
+                                 class="w-[32px] h-[32px] rounded-full"/>
+                        </div>
+                        <div>
+                            <svg class="w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                 fill="currentColor">
+                                <path fill-rule="evenodd"
+                                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                      clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div x-cloak x-show="open" x-on:click.away="open = false" class="absolute top-full right-0">
+                        <div class="bg-white border py-1 w-52 rounded-b shadow-sm">
+                            <a href="#" class="flex items-center hover:bg-gray-100 py-2 px-4">
+                                <div class="mr-2">
+                                    <img src="https://vk.com/images/camera_50.png" alt="photo"
+                                         class="w-[32px] h-[32px] rounded-full"/>
+                                </div>
+                                <div>
+                                    <div class="text-blue-900">Елиза Либер</div>
+                                    <div class="text-gray-500 text-xs">Перейти в VK Connect</div>
+                                </div>
+                            </a>
+                            <div class="bg-gray-200 h-px mx-4 my-1"></div>
+                            <a href="#" class="text-blue-900 flex items-center hover:bg-gray-100 py-2 px-4">
+                                Настройки
+                            </a>
+                            <a href="#" class="flex items-center text-blue-900 hover:bg-gray-100 py-2 px-4">
+                                Помощь
+                            </a>
+                            <div class="bg-gray-200 h-px mx-4 my-1"></div>
+                            <a href="#" class="text-blue-900 flex items-center hover:bg-gray-100 py-2 px-4">
+                                Выйти
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container mx-auto">
+        <div class="flex items-start pt-4">
+
+            <!--Left-->
+
+            <div class="w-40 mr-2 flex-shrink-0">
+                <ul class="-ml-1">
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                Моя страница
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                Новости
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="w-full flex justify-between">
+                                <div class="flex items-center">
+                                    <div class="mr-2">
+                                        <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/>
+                                        </svg>
+
+                                    </div>
+                                    <div>
+                                        Мессенджер
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bg-gray-400 rounded-full  w-5 h-5 flex justify-center items-center text-white text-xs">
+                                        2
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                                </svg>
+
+                            </div>
+                            <div>
+                                Звонки
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+                                </svg>
+
+                            </div>
+                            <div>
+                                Друзья
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                Сообщества
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+                                </svg>
+
+                            </div>
+                            <div>
+                                Музыка
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                Видео
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0118 7.125v-1.5m1.125 2.625c-.621 0-1.125.504-1.125 1.125v1.5m2.625-2.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M18 5.625v5.25M7.125 12h9.75m-9.75 0A1.125 1.125 0 016 10.875M7.125 12C6.504 12 6 12.504 6 13.125m0-2.25C6 11.496 5.496 12 4.875 12M18 10.875c0 .621-.504 1.125-1.125 1.125M18 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m-12 5.25v-5.25m0 5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125m-12 0v-1.5c0-.621-.504-1.125-1.125-1.125M18 18.375v-5.25m0 5.25v-1.5c0-.621.504-1.125 1.125-1.125M18 13.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.125c0-.621.504-1.125 1.125-1.125M6 13.125v1.5c0 .621-.504 1.125-1.125 1.125M6 13.125C6 12.504 5.496 12 4.875 12m-1.5 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M19.125 12h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h1.5m14.25 0h1.5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                Клипы
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="relative flex items-center px-2 py-1 rounded hover:bg-gray-200 group">
+                            <div class="absolute left-0 top-0 -ml-4 mt-1.5 opacity-0 group-hover:opacity-100 transition duration-700">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                     class="w-4 text-gray-400 opacity-50 hover:opacity-100">
+                                    <path fill-rule="evenodd"
+                                          d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.294a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.294 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.294A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.294-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="mr-2">
+                                <svg class="w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                Игры
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="bg-gray-200 h-px my-2 ml-8"></div>
+
+                <ul class="flex flex-wrap h-full">
+                    <li class="px-1.5 mb-1">
+                        <a href="" class="text-gray-500 text-xs hover:underline">Блог</a>
+                    </li>
+                    <li class="px-1.5 mb-1">
+                        <a href="" class="text-gray-500 text-xs hover:underline">Разработчикам</a>
+                    </li>
+                    <li class="px-1.5 mb-1">
+                        <a href="" class="text-gray-500 text-xs hover:underline">Для бизнеса</a>
+                    </li>
+                    <li class="px-1.5 mb-1">
+                        <div x-data="{ open: false }" x-on:mouseenter="open = true" x-on:mouseleave="open = false"
+                             class="relative">
+                            <button class="flex mt-1 items-center h-full pt-px text-gray-500 text-xs hover:underline group focus:outline-none">
+                                <div>
+                                    Ещё
+                                </div>
+                                <div class="ml-1">
+                                    <svg class="w-3 text-gray-400 group-hover:text-gray-500"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                         fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                              clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </button>
+
+                            <div x-show="open" class="absolute top-3 left-0 pt-3">
+                                <div class="relative">
+                                    <div class="bg-white border border-gray-300 py-1 w-52 rounded shadow-sm">
+                                        <a href="#"
+                                           class="text-blue-900 flex text-xs items-center hover:bg-gray-100 py-2 px-4">
+                                            О ВКонтакте
+                                        </a>
+
+                                        <a href="#"
+                                           class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-2 px-4">
+                                            Вакансии
+                                        </a>
+
+                                        <a href="#"
+                                           class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-2 px-4">
+                                            Правовая информация
+                                        </a>
+                                        <a href="#"
+                                           class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-2 px-4">
+                                            Защита данных
+                                        </a>
+                                        <a href="#"
+                                           class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-2 px-4">
+                                            Центр информации
+                                        </a>
+                                        <a href="#"
+                                           class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-2 px-4">
+                                            Язык: русский
+                                        </a>
+                                    </div>
+                                    <div class="absolute top-0 w-4 h-4 ml-[26px] -mt-[12px] overflow-hidden">
+                                        <div class="absolute transform rotate-45 -bottom-2  right-0 origin-center left-0 h-full bg-white border border-gray-300">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Center-->
+
+            <div class="w-56 mr-4 flex-shrink-0">
+                <div class="bg-white rounded-[12px] border p-3 pb-1.5 mb-4">
+                    <div class="relative cursor-pointer overflow-hidden group">
+                        <img class="rounded-sm" src="https://vk.com/images/camera_200.png" alt="">
+                        <div class="absolute top-0 right-0 opacity-0 group-hover:opacity-100">
+                            <button class="w-4 h-4 bg-black text-opacity-75 hover:text-opacity-100 bg-opacity-50 focus:outline-none text-white rounded-tr-sm rounded-bl-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5"
+                                     stroke="currentColor" class="w-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-0 right-0 bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <ul class="bg-black rounded-b-sm bg-opacity-50 py-1">
+                                <li>
+                                    <a href=""
+                                       class="flex items-center px-3 py-0.5 text-white text-opacity-75 hover:text-opacity-100">
+                                        <div class="mr-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                 stroke-width="1.5" stroke="currentColor" class="w-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+                                            </svg>
+                                        </div>
+                                        Обновить фотографию
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                       class="flex items-center px-3 py-0.5 text-white text-opacity-75 hover:text-opacity-100">
+                                        <div class="mr-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                 stroke-width="1.5" stroke="currentColor" class="w-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        Изменить миниатюру
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                       class="flex items-center px-3 py-0.5 text-white text-opacity-75 hover:text-opacity-100">
+                                        <div class="mr-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                 stroke-width="1.5" stroke="currentColor" class="w-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/>
+                                            </svg>
+                                        </div>
+                                        Добавить эффекты
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <button type="button"
+                                class="bg-[#e5ebf1] text-[#346297] hover:bg-gray-200 rounded-md w-full px-3 py-1.5">
+                            Редактировать
+                        </button>
+                    </div>
+                    <ul class="pt-3">
+                        <li>
+                            <a href="#" class="flex items-center text-gray-500 py-1 hover:bg-gray-100 text-base">
+                                <div class="mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke-width="1.5" stroke="currentColor"
+                                         class="w-6 text-gray-400 group-hover:text-gray-600">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+                                    </svg>
+                                </div>
+                                Статистика страницы
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-gray-500 py-1 hover:bg-gray-100 group">
+                                <div class="mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke-width="1.5" stroke="currentColor"
+                                         class="w-6 text-gray-400 group-hover:text-gray-600">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                Воспоминания
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="flex items-center text-gray-500 py-1 hover:bg-gray-100 group">
+                                <div class="mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke-width="1.5" stroke="currentColor"
+                                         class="w-6 text-gray-400 group-hover:text-gray-600">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+                                    </svg>
+                                </div>
+                                Мои вопросы
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="flex items-center text-gray-500 py-1 hover:bg-gray-100 group">
+                                <div class="mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke-width="1.5" stroke="currentColor"
+                                         class="w-6 text-gray-400 group-hover:text-gray-600">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/>
+                                    </svg>
+                                </div>
+                                Денежные переводы
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-[12px] border py-3 pb-1.5 mb-4">
+                    <div class="flex justify-between items-center px-4 mb-4">
+                        <a href="#" class="flex-1">
+                            Друзья <span class="text-gray-500 ml-1">91</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:underline">обновления</a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 px-4">
+                        <a class="flex flex-col items-center cursor-pointerG">
+                            <div class="mb-1">
+                                <img class="rounded-full"
+                                     src="https://sun3-9.userapi.com/s/v1/ig2/r8A7Rq-qSW7C4HHS3qF3Q-h1gjBnvySuj9H8m4JvqmI14ZQiDj7ioD3l9wC_DOaDhaqAuLJbeFeWwRA8gO-bQBph.jpg?size=50x50&quality=96&crop=18,23,660,660&ava=1"
+                                     alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <span class="text-blue-900 hover:underline -px-1.2">Vitaly</span>
+                            </div>
+                        </a>
+                        <a class="flex flex-col items-center cursor-pointerG">
+                            <div class="mb-1">
+                                <img class="rounded-full"
+                                     src="https://sun3-8.userapi.com/s/v1/if1/uftIKdpyhthonL-ylnvvWaYwrwWbraT9JsqjKwcUGnRuRSBImv878Sem6va1uSDYnB0dG7Fq.jpg?size=50x50&quality=96&crop=794,321,1088,1088&ava=1"
+                                     alt=""
+                                />
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <span class="text-blue-900 hover:underline -px-1.2">Irina</span>
+                            </div>
+                        </a>
+                        <a class="flex flex-col items-center cursor-pointerG">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <span class="text-blue-900 hover:underline -px-1.2">Lisa</span>
+                            </div>
+                        </a>
+                        <a class="flex flex-col items-center cursor-pointerG">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <span class="text-blue-900 hover:underline -px-1.2">Lisa</span>
+                            </div>
+                        </a>
+                        <a class="flex flex-col items-center cursor-pointerG">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <span class="text-blue-900 hover:underline -px-1.2">Lisa</span>
+                            </div>
+                        </a>
+                        <a class="flex flex-col items-center cursor-pointerG">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <span class="text-blue-900 hover:underline -px-1.2">Lisa</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-gray-200 h-px my-2 w-full"></div>
+                    <div class="flex justify-between items-center px-4 mb-4">
+                        <a href="#" class="flex-1">
+                            Друзья онлайн <span class="text-gray-500 ml-1">3</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 px-4">
+                        <div class="flex flex-col items-center ">
+                            <div class="mb-1">
+                                <img class="rounded-full"
+                                     src="https://sun3-9.userapi.com/s/v1/ig2/r8A7Rq-qSW7C4HHS3qF3Q-h1gjBnvySuj9H8m4JvqmI14ZQiDj7ioD3l9wC_DOaDhaqAuLJbeFeWwRA8gO-bQBph.jpg?size=50x50&quality=96&crop=18,23,660,660&ava=1"
+                                     alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <a href="#" class="text-blue-900 hover:underline -px-1.2">Vitaly</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="mb-1">
+                                <img class="rounded-full"
+                                     src="https://sun3-8.userapi.com/s/v1/if1/uftIKdpyhthonL-ylnvvWaYwrwWbraT9JsqjKwcUGnRuRSBImv878Sem6va1uSDYnB0dG7Fq.jpg?size=50x50&quality=96&crop=794,321,1088,1088&ava=1"
+                                     alt=""
+                                />
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <a href="#" class="text-blue-900 hover:underline -px-1.2">Irina</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <a href="#" class="text-blue-900 hover:underline -px-1.2">Lisa</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <a href="#" class="text-blue-900 hover:underline -px-1.2">Lisa</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <a href="#" class="text-blue-900 hover:underline -px-1.2">Lisa</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="mb-1">
+                                <img class="rounded-full" src="https://vk.com/images/camera_50.png" alt="">
+                            </div>
+                            <div class="truncate" style="max-width: 2.9rem">
+                                <a href="#" class="text-blue-900 hover:underline -px-1.2">Lisa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[12px] border py-3 pb-1.5 mb-4">
+                    <div class="flex justify-between items-center px-4 py-1">
+                        <a href="#" class="flex-1">
+                            Подписки <span class="text-gray-500 ml-1">26</span>
+                        </a>
+                    </div>
+
+                    <ul class="px-3 pt-3 pb-3 space-y-3">
+                        <li class="flex">
+                            <a href="#" class="block px-1 flex-shrink-0">
+                                <img class="w-10 rounded-full"
+                                     src="https://sun3-13.userapi.com/s/v1/ig2/ajbhaEdcfb0ndQpEM1acOm2XGIBaPYnrJnUnsSmj4u22kjudUi2QmkVKTudQukf2zwvjUC7bBv-Xhk265wnLRLz_.jpg?size=50x50&quality=96&crop=55,60,314,314&ava=1"
+                                     alt="">
+                            </a>
+                            <div class="pl-2 flex-1">
+                                <a href="#" class="block leading-4 mb-0.5 text-blue-900 hover:underline">
+                                    Study Buddy | Поиск Напарника
+                                </a>
+                                <div class="text-sm leading-4 text-gray-500">
+                                    Проект для поиска напарника
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex mt-3">
+                            <a href="#" class="block px-1 flex-shrink-0">
+                                <img class="w-10 rounded-full"
+                                     src="https://sun3-12.userapi.com/s/v1/if1/fALGxVLq0io9ds3c5iBd4mVQq41whPMel4rLOumWrPz5RhEw487dNnPvhoBpwzJyONIK7een.jpg?size=50x50&quality=96&crop=74,89,367,367&ava=1"
+                                     alt="">
+                            </a>
+                            <div class="pl-2 flex-1">
+                                <a href="#" class="m-0 block leading-4 mb-0.5 text-blue-900 hover:underline">
+                                    Английский язык
+                                </a>
+                                <div class="text-sm leading-4 text-gray-500">
+                                    Образование
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex mt-3">
+                            <a href="#" class="block px-1 flex-shrink-0">
+                                <img class="w-10 rounded-full"
+                                     src="https://sun3-8.userapi.com/s/v1/ig2/zxprisGcT_8owDOqGjFS7aHtqumER0leS0fDyBnMEnAiubzdKkJ1ds6dsjRu_wEkeqowqlaWwtFQRKla15VftS8O.jpg?size=50x50&quality=96&crop=42,23,722,722&ava=1"
+                                     alt="">
+                            </a>
+                            <div class="pl-2 flex-1">
+                                <a href="#" class="block leading-4 mb-0.5 text-blue-900 hover:underline">
+                                    localhost
+                                </a>
+                                <div class="text-sm leading-4 text-gray-500">
+                                    Тихая IT-гавань в море негатива
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-200 h-px my-2 w-full"></div>
+                    <div class="flex justify-between items-center px-4  mb-4">
+                        <a href="#" class="flex-1 pb-1">
+                            Статьи <span class="text-gray-500 ml-1">3</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:underline pb-1">создать</a>
+                    </div>
+                    <ul class="pt-2 pb-3">
+                        <li>
+                            <a href="" class="block relative">
+                                <img src="https://sun9-12.userapi.com/impf/c841423/v841423107/63411/1uSHLf6gCZ8.jpg?size=604x453&quality=96&sign=5ec34d130da396a3741eb221cdbcaa6b&type=album"
+                                     alt="Нужно ли много работать?"/>
+                                <span class="absolute">
+                                    <button class="rounded bg-white text-center text-black focus:outline-none shadow"></button>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://sun9-9.userapi.com/impf/c824409/v824409575/9d2f1/LfnmRaIcp3A.jpg?size=604x340&quality=96&sign=c2e2c9b3b758320e9142f070fe55ed6d&type=album"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--Right-->
+
+            <div class="flex-1">
+                <div class="bg-white p-4">
+                    Right
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
