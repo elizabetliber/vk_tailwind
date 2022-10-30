@@ -29,7 +29,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -62,7 +62,7 @@
 </head>
 <body class="min-h-screen bg-gray-100 text-base">
 <header class="sticky top-0 bg-white border-b z-10">
-    <div class="container mx-auto">
+    <div class="container mx-auto max-w-[1200px]">
         <div class="flex justify-between items-center h-12">
 
             <!--Logo-->
@@ -200,7 +200,7 @@
 </header>
 
 <section>
-    <div class="container mx-auto">
+    <div class="container mx-auto max-w-[1200px]">
         <div class="flex items-start pt-4">
 
             <!--Left-->
@@ -1055,7 +1055,7 @@
                         </div>
 
 
-                        <button x-on:click="open = ! open"
+                        <button x-on:click="open = !open"
                                 class="grid grid-cols-3 gap-2 w-full py-2 text-left text-blue-900 hover:bg-gray-200 focus:outline-none">
                             <div></div>
                             <div class="col-span-2">
@@ -1259,9 +1259,278 @@
                 </div>
 
                 <!--Posts-->
+                <!--Post 1-->
 
-                <div class="bg-white rounded-xl p-4">
-                    Right
+                <div class="bg-white rounded-xl border">
+                    <div class="p-4">
+                        <div class="flex justify-between">
+                            <div class="flex items-center">
+                                <a href="#" class="block flex-shrink-0">
+                                    <img class="w-12 rounded-full" alt="ava" src="https://vk.com/images/camera_50.png"/>
+                                </a>
+                                <div class="pl-4 flex flex-col">
+                                    <a href="" class="block font-medium text-blue-900 hover:underline">
+                                        Елиза Либер
+                                    </a>
+
+                                    <a href="#" class="block text-gray-400 hover:underline">
+                                        8 мар. в 11:39
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div x-data="{open: false}" x-on:mouseenter="open = true" x-on:mouseleave="open = false"
+                                     class="relative">
+                                    <button class="focus:outline-none p-2">
+                                        <svg class="w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 24 24" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                                                  clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open" class="absolute top-3 -right-4 pt-4">
+                                        <div class="relative">
+                                            <div class="bg-white border border-gray-300 py-1 w-52 rounded shadow-sm">
+                                                <a href="#"
+                                                   class="text-blue-900 flex text-xs items-center hover:bg-gray-100 py-1.5 px-4">
+                                                    Удалить запись
+                                                </a>
+
+                                                <a href="#"
+                                                   class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-1.5 px-4">
+                                                    Архивировать запись
+                                                </a>
+                                                <a href="#"
+                                                   class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-1.5 px-4">
+                                                    Сохранить в закладки
+                                                </a>
+                                                <a href="#"
+                                                   class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-1.5 px-4">
+                                                    Закрепить
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-1 right-0 w-4 h-4 mr-[25px] -mt-[12px] overflow-hidden">
+                                                <div class="absolute transform rotate-45  -bottom-1  right-0 origin-center left-0 h-full bg-white border border-gray-300"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="pt-3">
+                            С праздником!
+
+                            <div class="grid grid-cols-4 pt-3">
+                                <div class="col-span-2">
+                                    <img class=""
+                                         src="https://oooukgs.ru/wp-content/uploads/2022/02/84a154350eca21a7423293f77ccc4f1c.jpg"
+                                         alt="celebrate">
+                                </div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="pt-3">
+                            <div class="bg-gray-200 h-px mb-3"></div>
+
+                            <div class="flex justify-between items-center pt-3">
+                                <div class="flex items-center space-x-4">
+                                    <div x-data="{liked: false}" x-on:click="liked = !liked">
+                                        <div x-show="liked">
+                                            <button class="flex items-center focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-400">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+                                                </svg>
+
+                                                <div class="pl-1.5 text-gray-600 text-lg">
+                                                    18
+                                                </div>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="! liked">
+                                            <button class="flex items-center focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 text-red-500">
+                                                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                                </svg>
+
+
+                                                <div class="pl-1.5 text-gray-600 text-lg">
+                                                    19
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <button class="focus:outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-400">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                        </svg>
+                                    </button>
+                                    <button class="focus:outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-400">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <div class="text-gray-400 pl-1.5">
+                                        200
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Post 2-->
+
+                <div class="bg-white rounded-xl border mt-4">
+                    <div class="p-4">
+                        <div class="flex justify-between">
+                            <div class="flex items-center">
+                                <a href="#" class="block flex-shrink-0">
+                                    <img class="w-12 rounded-full" alt="ava" src="https://vk.com/images/camera_50.png"/>
+                                </a>
+                                <div class="pl-4 flex flex-col">
+                                    <a href="" class="block font-medium text-blue-900 hover:underline">
+                                        Елиза Либер
+                                    </a>
+
+                                    <a href="#" class="block text-gray-400 hover:underline">
+                                        10 мар. в 11:13
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div x-data="{open: false}" x-on:mouseenter="open = true" x-on:mouseleave="open = false"
+                                     class="relative">
+                                    <button class="focus:outline-none p-2">
+                                        <svg class="w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 24 24" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                                                  clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open" class="absolute top-3 -right-4 pt-4">
+                                        <div class="relative">
+                                            <div class="bg-white border border-gray-300 py-1 w-52 rounded shadow-sm">
+                                                <a href="#"
+                                                   class="text-blue-900 flex text-xs items-center hover:bg-gray-100 py-1.5 px-4">
+                                                    Удалить запись
+                                                </a>
+
+                                                <a href="#"
+                                                   class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-1.5 px-4">
+                                                    Архивировать запись
+                                                </a>
+                                                <a href="#"
+                                                   class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-1.5 px-4">
+                                                    Сохранить в закладки
+                                                </a>
+                                                <a href="#"
+                                                   class="flex items-center text-xs text-blue-900 hover:bg-gray-100 py-1.5 px-4">
+                                                    Закрепить
+                                                </a>
+                                            </div>
+                                            <div class="absolute top-1 right-0 w-4 h-4 mr-[25px] -mt-[12px] overflow-hidden">
+                                                <div class="absolute transform rotate-45  -bottom-1  right-0 origin-center left-0 h-full bg-white border border-gray-300"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="pt-3">
+                            Зима в наших краях!
+
+                            <div class="grid grid-cols-4 pt-3">
+                                <div class="col-span-2">
+                                    <img class=""
+                                         src="https://sun9-22.userapi.com/impg/xa63brEB_VJQedL8eOQ_kfodROwn3Aj77DX1sA/A4VEYPtI8bc.jpg?size=1280x960&quality=95&sign=249446c4bfcd3d7cfbbcd645a70857f7&type=album"
+                                         alt="celebrate">
+                                </div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="pt-3">
+                            <div class="bg-gray-200 h-px mb-3"></div>
+
+                            <div class="flex justify-between items-center pt-3">
+                                <div class="flex items-center space-x-4">
+                                    <div x-data="{liked: false}" x-on:click="liked = !liked">
+                                        <div x-show="liked">
+                                            <button class="flex items-center focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-400">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+                                                </svg>
+
+                                                <div class="pl-1.5 text-gray-600 text-lg">
+                                                    35
+                                                </div>
+                                            </button>
+                                        </div>
+
+                                        <div x-show="! liked">
+                                            <button class="flex items-center focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 text-red-500">
+                                                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                                </svg>
+
+
+                                                <div class="pl-1.5 text-gray-600 text-lg">
+                                                    36
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <button class="focus:outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-400">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                        </svg>
+                                    </button>
+                                    <button class="focus:outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-gray-400">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <div class="text-gray-400 pl-1.5">
+                                        215
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1269,4 +1538,4 @@
 </section>
 
 </body>
-</html>2
+</html>
